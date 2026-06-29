@@ -26,10 +26,7 @@ def audio_collate_fn(
 
     max_length = padded_waveforms.shape[1]
 
-    padding_mask = (
-        torch.arange(max_length).unsqueeze(0)
-        >= lengths.unsqueeze(1)
-    )
+    padding_mask = torch.arange(max_length).unsqueeze(0) >= lengths.unsqueeze(1)
 
     log_mel = feature_extractor(padded_waveforms)
 

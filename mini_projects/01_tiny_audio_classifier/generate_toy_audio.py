@@ -26,9 +26,7 @@ def create_waveform(
 
     time = torch.arange(num_samples) / sample_rate
 
-    waveform = torch.sin(
-        2 * torch.pi * frequency * time
-    )
+    waveform = torch.sin(2 * torch.pi * frequency * time)
 
     noise = noise_level * torch.randn_like(waveform)
     waveform = waveform + noise
@@ -41,9 +39,7 @@ def create_waveform(
 def main() -> None:
     torch.manual_seed(42)
 
-    output_root = Path(
-        "data/toy_audio"
-    )
+    output_root = Path("data/toy_audio")
 
     for label in range(NUM_CLASSES):
         class_directory = output_root / f"class_{label}"
@@ -63,10 +59,7 @@ def main() -> None:
                 sample_rate=SAMPLE_RATE,
             )
 
-            output_path = (
-                class_directory
-                / f"sample_{index:03d}.wav"
-            )
+            output_path = class_directory / f"sample_{index:03d}.wav"
 
             sf.write(
                 file=str(output_path),
@@ -74,10 +67,7 @@ def main() -> None:
                 samplerate=SAMPLE_RATE,
             )
 
-    print(
-        f"Created {NUM_CLASSES * SAMPLES_PER_CLASS} "
-        f"audio files in {output_root}"
-    )
+    print(f"Created {NUM_CLASSES * SAMPLES_PER_CLASS} audio files in {output_root}")
 
 
 if __name__ == "__main__":

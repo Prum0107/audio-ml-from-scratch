@@ -20,10 +20,7 @@ class SGD:
         self.lr = lr
         self.momentum = momentum
 
-        self.velocities = [
-            torch.zeros_like(param)
-            for param in self.params
-        ]
+        self.velocities = [torch.zeros_like(param) for param in self.params]
 
     def zero_grad(self) -> None:
         for param in self.params:

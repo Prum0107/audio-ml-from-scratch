@@ -56,11 +56,7 @@ def main() -> None:
         if epoch % 10 == 0:
             accuracy = calculate_accuracy(logits, targets)
 
-            print(
-                f"epoch={epoch:03d} "
-                f"loss={loss.item():.4f} "
-                f"accuracy={accuracy:.4f}"
-            )
+            print(f"epoch={epoch:03d} loss={loss.item():.4f} accuracy={accuracy:.4f}")
 
 
 if __name__ == "__main__":

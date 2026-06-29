@@ -100,9 +100,7 @@ def test_cross_entropy_gradient_matches_finite_difference() -> None:
             loss_plus = cross_entropy(logits_plus, targets)
             loss_minus = cross_entropy(logits_minus, targets)
 
-            numerical_gradient[i, j] = (
-                loss_plus - loss_minus
-            ) / (2 * epsilon)
+            numerical_gradient[i, j] = (loss_plus - loss_minus) / (2 * epsilon)
 
     assert np.allclose(
         analytical_gradient,

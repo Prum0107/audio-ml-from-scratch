@@ -325,4 +325,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main()ls mini_projects/01_tiny_audio_classifier

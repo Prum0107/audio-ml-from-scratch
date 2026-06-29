@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def softmax(x: np.ndarray, axis: int = -1) -> np.ndarray:
     """
     Compute a numerically stable softmax along the given axis.
