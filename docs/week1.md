@@ -1,0 +1,7 @@
+This week’s core focus was building a deep learning foundation and a complete audio classification pipeline from scratch. I connected the full workflow, from mathematical derivation and low-level implementation to a reproducible end-to-end training system.
+
+On the theoretical side, I implemented numerically stable versions of Softmax and multiclass cross-entropy loss using NumPy. I studied the log-sum-exp technique to avoid numerical overflow during exponentiation and derived the gradient of cross-entropy with respect to the logits. I also implemented SGD with momentum and developed a clearer understanding of how gradients, learning rates, and historical update directions affect parameter optimization.
+
+On the engineering side, I built a PyTorch-based audio classification pipeline. This included audio loading, mono conversion, sample-rate normalization, variable-length padding with pad_sequence, padding-mask generation, and log-Mel spectrogram extraction. I then implemented a convolutional classifier, TinyAudioClassifier, using AdaptiveAvgPool2d so that the model could handle inputs with different time dimensions.
+
+Finally, I completed an end-to-end training and evaluation loop on a self-generated toy audio dataset. The pipeline includes training and evaluation mode switching, accuracy tracking, reproducible random seeds, validation, and best-checkpoint saving. This project helped me verify that the entire process—from raw waveform input to parameter updates and model evaluation—works correctly.
